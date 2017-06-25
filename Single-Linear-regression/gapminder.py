@@ -13,15 +13,15 @@ print (bmi_life_data)
 #for key in bmi_life_data:
 #    print ("Key=" + key)
 
-x_values = bmi_life_data['BMI'].values.reshape(-1, 1)
+x_values = bmi_life_data[['BMI']]   #.values.reshape(-1, 1)
 
-y_values = bmi_life_data['Life expectancy']
+y_values = bmi_life_data[['Life expectancy']]
 
 
 #Make and fit the linear regression model
 bmi_life_model = LinearRegression()
 bmi_life_model.fit(x_values, y_values)
-bmi_life_model.fit(bmi_life_data[['BMI']], bmi_life_data[['Life expectancy']])
+
 
 
 #Make a prediction using the model
@@ -31,9 +31,9 @@ print(laos_life_exp)
 
 
 #Plot the Life expectancy vs BMI
-plt.plot(y_values, x_values, 'ro')
+
+plt.scatter(x_values, y_values)
+plt.plot(x_values, bmi_life_model.predict(x_values), 'r')
 plt.ylabel('Life expectancy')
 plt.xlabel('BMI')
 plt.show()
-
-
