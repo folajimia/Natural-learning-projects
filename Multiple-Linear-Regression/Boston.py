@@ -15,8 +15,7 @@ boston_data = load_boston()
 x = boston_data['data']
 y = boston_data['target']
 
-#print (x)
-#print (y)
+
 
 #Make and fit the linear regression model
 
@@ -38,5 +37,11 @@ prediction = model.predict(sample_house)
 print(prediction)
 
 
-plt.plot(y, x, 'ro')
-plt.show()
+#visualize results
+#plt.scatter(x, y)
+#plt.plot(x, y)
+#plt.plot(x, model.predict(x))
+#plt.ylabel('Target')
+#plt.xlabel('Data')
+#plt.show()
+
