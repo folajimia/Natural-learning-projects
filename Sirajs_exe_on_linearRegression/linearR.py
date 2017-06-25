@@ -39,6 +39,11 @@ print(y_prediction)
 
 error = 6.7504 - y_prediction
 
+#TODO
+#replace 6.70504 with computer picked random value
+
+
+
 
 print("Error: %.2f" % error)
 
